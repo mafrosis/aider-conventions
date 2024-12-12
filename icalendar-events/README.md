@@ -38,13 +38,6 @@ This convention is ideal for:
 - Generating conference or meeting schedules
 - Planning multi-day events and stays
 
-## Key Features
-
-- Strict attention to timezone handling
-- Clear guidelines for multi-day events
-- Verification checklist for calendar accuracy
-- Process for proofreading and error detection
-
 ## Usage
 
 Save your event information to a file, then run aider like:
