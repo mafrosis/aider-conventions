@@ -1,12 +1,18 @@
-// Following  https://aider.chat/docs/usage/conventions.html 
-// we need to add tons of webpages and most of the subpages: 
-* https://docs.moodle.org/dev/Moodle_architecture
-* https://moodledev.io/general/development/policies
+## Moodle Plugin Development Conventions
 
-// Tools like 
-* https://moodledev.io/general/development/tools/nodejs
+These conventions are used to guide the development of Moodle plugins.
 
-// API Webservices
-* https://docs.moodle.org/dev/Web_service_API_functions
+### General
 
-// and so much more...
+*   **HTTP Requests:** Prefer `httpx` over `requests` for making HTTP requests.
+*   **Type Hints:** Use type hints wherever possible to improve code clarity and maintainability.
+
+### Moodle Specific
+
+*   Follow the Moodle coding standards and API documentation:
+    *   [Moodle Architecture](https://docs.moodle.org/dev/Moodle_architecture)
+    *   [Moodle Development Policies](https://moodledev.io/general/development/policies)
+    *   [Moodle Web Service API](https://docs.moodle.org/dev/Web_service_API_functions)
+
+*   Use Moodle's recommended development tools:
+    *   [Node.js](https://moodledev.io/general/development/tools/nodejs)
