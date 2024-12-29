@@ -129,3 +129,49 @@ These rules are derived from the Moodle development policies and should be follo
 #### Translations
 
 *   **Internationalization:** Pay attention to keeping the language strings and locale information separate from the code, in language packs.
+
+### Bootstrap 5 Migration
+
+These rules are derived from the Bootstrap 5 migration guide and should be followed when updating Moodle's UI.
+
+#### General Migration
+
+*   **Gradual Migration:** The migration to Bootstrap 5 will be done in a gradual way, with steps executed in different phases.
+*   **PopperJS Upgrade:** Upgrade PopperJS to version 2, while maintaining compatibility with version 1 for Bootstrap 4.
+*   **SCSS Deprecation:** Follow the SCSS deprecation process for cleanup after the Bootstrap 5 upgrade.
+*   **Refactor BS4 Features:** Refactor Bootstrap 4 features that are deprecated or dropped in Bootstrap 5.
+*   **BS5 Bridge:** Use a BS5 "bridge" to address simple breaking changes in advance.
+*   **BS5 Upgrade:** Upgrade the current Bootstrap 4 version to version 5.
+*   **BS4 Backwards-Compatibility:** Create a backwards-compatibility layer to allow Bootstrap 4 syntax to still work until final deprecation.
+*   **Final Deprecation:** Eventually, fully deprecate Bootstrap 4 syntax.
+
+#### Refactoring BS4 Features
+
+*   **Badge Colors:** Replace `.badge-*` color classes with background utilities like `.bg-primary` and corresponding text color classes (`.text-dark` or `.text-white`).
+*   **Badge Pills:** Replace `.badge-pill` with `.rounded-pill`.
+*   **Media Component:** Replace the `.media` component with utility classes like `d-flex`, `flex-shrink-0`, and `flex-grow-1`.
+*   **Mixins:** Refactor deprecated mixins such as `hover`, `float-left`, `nav-divider`, `img-retina`, `text-hide`, `invisible`, `form-control-focus`, `text-emphasis-variant`, `size`, `make-container-max-widths`, `g-variant`, and `bg-gradient-variant`. Use the suggested replacements.
+*   **Form Groups:** Replace `.form-group` with margin utilities.
+*   **Form Inline:** Replace `.form-inline` with utility classes like `d-flex` and `flex-wrap`.
+*   **Card Decks:** Replace `.card-deck` with utility classes like `row` and `col`.
+
+#### BS5 Bridge
+
+*   **SCSS Bridge File:** Use the `bs5-bridge.scss` file in `theme/boost/scss/moodle` for compatibility changes.
+*   **No Gutters:** Replace `.no-gutters` with `.g-0`.
+*   **Close Button:** Replace `.close` with `.btn-close`.
+*   **Directional Utilities:**
+    *   Replace `.float-left` and `.float-right` with `.float-start` and `.float-end`.
+    *   Replace `.border-left` and `.border-right` with `.border-start` and `.border-end`.
+    *   Replace `.rounded-left` and `.rounded-right` with `.rounded-start` and `.rounded-end`.
+    *   Replace `.ml-*` and `.mr-*` with `.ms-*` and `.me-*`.
+    *   Replace `.pl-*` and `.pr-*` with `.ps-*` and `.pe-*`.
+    *   Replace `.text-left` and `.text-right` with `.text-start` and `.text-end`.
+*   **Theme Color Level:** Replace `theme-color-level()` with `shift-color()`, using percentages instead of levels (e.g., level 1 becomes 10%).
+*   **Rounded Classes:** Replace `.rounded-sm` and `.rounded-lg` with `.rounded-1` and `.rounded-3`.
+*   **Screen Reader Utilities:**
+    *   Replace `.sr-only` and `.sr-only-focusable` with `.visually-hidden` and `.visually-hidden-focusable`.
+    *   Replace `sr-only()` and `sr-only-focusable()` mixins with `visually-hidden()` and `visually-hidden-focusable()`.
+*   **Font Utility Classes:**
+    *   Replace `.font-weight-*` with `.fw-*`.
+    *   Replace `.font-italic` with `.fst-italic`.
