@@ -7,7 +7,7 @@ These conventions are used to guide the development of Moodle plugins.
 *   **HTTP Requests:** Prefer `httpx` over `requests` for making HTTP requests.
 *   **Type Hints:** Use type hints wherever possible to improve code clarity and maintainability.
 
-### Moodle Specific
+## Moodle Specific
 
 *   Follow the Moodle coding standards and API documentation:
     *   [Moodle Architecture](https://docs.moodle.org/dev/Moodle_architecture)
@@ -17,7 +17,7 @@ These conventions are used to guide the development of Moodle plugins.
 *   Use Moodle's recommended development tools:
     *   [Node.js](https://moodledev.io/general/development/tools/nodejs)
 
-# Moodle Architecture
+## Moodle Architecture
 
 *   **Modular System:** Moodle is a modular system. Always extend functionality through plugins, not by modifying core files.
 *   **Plugin Types:** Understand the different plugin types (activities, resources, blocks, themes, etc.) and use the appropriate APIs for each.
@@ -44,12 +44,12 @@ These conventions are used to guide the development of Moodle plugins.
 *   **Enrolment Plugins:** Enrolment plugins control which users are enrolled in which courses.
 *   **Repository Plugins:** Repository plugins provide ways for users to get content into Moodle.
 
-# Moodle Development Policies 
+## Moodle Development Policies
 (from https://moodledev.io/general/development/policies)
 
 These rules are derived from the Moodle development policies and should be followed when developing Moodle plugins.
 
-## General Architecture
+### General Architecture
 
 *   **Platform Compatibility:** Moodle aims to run on a wide range of platforms. Ensure your code is compatible and portable.
 *   **Modularity:** Moodle is modular. Extend functionality through plugins, not by modifying core files.
@@ -65,77 +65,77 @@ These rules are derived from the Moodle development policies and should be follo
 *   **Security Guidelines:** Strictly follow Moodle's security guidelines to protect user data and prevent vulnerabilities.
 *   **Responsible Internet Citizen:** Ensure your code does not introduce vulnerabilities that could compromise the server.
 
-#### Standards
+### Standards
 
 *   **HTML5 Compliance:** Produce strict, well-formed HTML5 code, preferably backwards compatible with XHTML 1.1.
 *   **Accessibility:** Comply with common accessibility guidelines (W3C WCAG 2.0, ARIA).
 *   **CSS for Layout:** Use CSS for layout and separate presentation from business logic.
 *   **Theme Extension:** If creating a custom theme, extend the Moodle 'Boost' theme.
 
-#### JavaScript
+### JavaScript
 
 *   **Vanilla JavaScript:** Write new JavaScript in Vanilla JavaScript using ES6 style.
 *   **Discourage Frameworks:** Avoid using jQuery, YUI, and other frameworks except for legacy interfaces.
 *   **Avoid Interface Manipulation:** Write code to avoid removing or adding interfaces as the page loads.
 *   **Accessibility:** Ensure all JavaScript is accessible.
 
-#### Internationalisation
+### Internationalisation
 
 *   **Language Packs:** Keep language strings and locale information separate from the code, using language packs.
 *   **Default Language:** Use English (AU) as the default language for all code, comments, and documentation.
 
-#### Accessibility
+### Accessibility
 
 *   **Wide Range of Users:** Ensure Moodle works well for the widest possible range of people.
 
-#### Component Library
+### Component Library
 
 *   **Component Reuse:** Utilize the component library to identify and reuse frequently-used user interface components.
 
-#### Performance
+### Performance
 
 *   **Scalability:** Ensure your code scales well with an increasing number of users, courses, and activities.
 *   **Discourage Performance Issues:** Avoid features that are discouraged on production sites for performance reasons.
 
-#### Database
+### Database
 
 *   **XMLDB:** Use Moodle's database abstraction layer (XMLDB) for database interactions.
 *   **Database APIs:** Use the provided tools and APIs for defining, modifying, retrieving, and storing data.
 
-#### Events
+### Events
 
 *   **Event Observers:** Use event observers to be notified when events happen and act on the data.
 *   **Observer Limitations:** Observers cannot modify event data or prevent actions from occurring.
 *   **Naming Convention:** Follow the events naming convention.
 
-#### Web Services
+### Web Services
 
 *   **Web Service API:** Implement web services according to the Web Service API functions.
 *   **Naming Convention:** Follow the naming convention for web service functions.
 
-#### Testing
+### Testing
 
 *   **Manual Testing:** Write clear testing instructions for manual testing.
 *   **Unit Testing:** Create automated unit tests for each bit of functionality using PHPUnit.
 *   **Acceptance Testing:** Automate user interaction testing using the Behat framework.
 
-#### Third Party Libraries
+### Third Party Libraries
 
 *   **Standard Inclusion:** Use the standard way to include third-party libraries in your code.
 
-#### Other Standards
+### Other Standards
 
 *   **Unique Style:** Moodle coding style is unique and not compatible with PEAR or other common PHP standards.
 
-#### Translations
+### Translations
 
 *   **Internationalization:** Pay attention to keeping the language strings and locale information separate from the code, in language packs.
 
-### Bootstrap 5 Migration
+## Bootstrap 5 Migration
 
 These rules are derived from the Bootstrap 5 migration guide and should be followed when updating Moodle's UI.
 
-#### General Migration
+### General Migration
 
 *   **Gradual Migration:** The migration to Bootstrap 5 will be done in a gradual way, with steps executed in different phases.
 *   **PopperJS Upgrade:** Upgrade PopperJS to version 2, while maintaining compatibility with version 1 for Bootstrap 4.
@@ -146,7 +146,7 @@ These rules are derived from the Bootstrap 5 migration guide and should be follo
 *   **BS4 Backwards-Compatibility:** Create a backwards-compatibility layer to allow Bootstrap 4 syntax to still work until final deprecation.
 *   **Final Deprecation:** Eventually, fully deprecate Bootstrap 4 syntax.
 
-#### Refactoring BS4 Features
+### Refactoring BS4 Features
 
 *   **Badge Colors:** Replace `.badge-*` color classes with background utilities like `.bg-primary` and corresponding text color classes (`.text-dark` or `.text-white`).
 *   **Badge Pills:** Replace `.badge-pill` with `.rounded-pill`.
@@ -156,7 +156,7 @@ These rules are derived from the Bootstrap 5 migration guide and should be follo
 *   **Form Inline:** Replace `.form-inline` with utility classes like `d-flex` and `flex-wrap`.
 *   **Card Decks:** Replace `.card-deck` with utility classes like `row` and `col`.
 
-#### BS5 Bridge
+### BS5 Bridge
 
 *   **SCSS Bridge File:** Use the `bs5-bridge.scss` file in `theme/boost/scss/moodle` for compatibility changes.
 *   **No Gutters:** Replace `.no-gutters` with `.g-0`.
@@ -177,7 +177,7 @@ These rules are derived from the Bootstrap 5 migration guide and should be follo
     *   Replace `.font-weight-*` with `.fw-*`.
     *   Replace `.font-italic` with `.fst-italic`.
 
-# Aider JavaScript Rules for Moodle Plugin Development
+## Aider JavaScript Rules for Moodle Plugin Development
 
 These rules are derived from the Moodle JavaScript guidelines and are intended to guide Aider in generating Moodle-compliant JavaScript code.
 
@@ -189,7 +189,7 @@ These rules are derived from the Moodle JavaScript guidelines and are intended t
 -   **Vanilla JavaScript:** Use vanilla JavaScript with Moodle helpers, avoiding jQuery, YUI, and other frameworks except for legacy interfaces.
 -   **Accessibility:** Ensure all JavaScript is accessible.
 
-## Module Structure
+### Module Structure
 
 -   **Naming Convention:** JavaScript modules must follow the naming convention: `[component_name]/[optional/sub/namespace/][modulename]`.
 -   **Component Directory:** The first directory in any subfolder must be either a Moodle API or `local`.
@@ -204,13 +204,13 @@ These rules are derived from the Moodle JavaScript guidelines and are intended t
     -   `local/participants/selectors.js` (module name: `core_user/local/participants/selectors`)
     -   `participants.js` (module name: `core_user/participants`)
 
-## Module Content
+### Module Content
 
 -   **Entry Point:** Each module should have an entry point, usually a function called `init`, which is exported.
 -   **Dependencies:** Import dependencies using the `import` keyword.
 -   **Exports:** Export functions, objects, classes, and other data structures as needed.
 
-## DOM Event Handling
+### DOM Event Handling
 
 -   **Event Listeners:** Use `document.addEventListener()` to listen for DOM events.
 -   **CSS Selectors:** Store CSS selectors in a separate `Selectors` object within the module.
@@ -219,7 +219,7 @@ These rules are derived from the Moodle JavaScript guidelines and are intended t
 -   **Event Delegation:** Use event delegation to handle events on multiple elements with a single listener.
 -   **`e.target.closest()`:** Use `e.target.closest()` to check if the clicked element or its parent matches a CSS selector.
 
-## Including JavaScript
+### Including JavaScript
 
 -   **From Templates:** Use `{{#js}}` tags in Mustache templates to include JavaScript.
     -   Example:
@@ -236,18 +236,18 @@ These rules are derived from the Moodle JavaScript guidelines and are intended t
     -   Pass arguments to the function as an array: `$PAGE->requires->js_call_amd('mod_forum/discussion', 'init', [$course->id]);`
     -   Use array destructuring in JavaScript to get named values from multi-dimensional arrays.
 
-## Data Handling
+### Data Handling
 
 -   **Data Attributes:** Use `data-*` attributes to pass data to JavaScript modules.
 -   **Web Services:** Use Moodle Web Services to fetch complex data structures dynamically.
 
-## Promises
+### Promises
 
 -   **`then` and `catch`:** Use `then` and `catch` consistently for promise handling.
 -   **Return Promises:** Return a Promise from a function if the function is primarily tasked with creating that Promise.
 -   **Avoid `done`, `fail`, `always`:** Do not use `done`, `fail`, or `always` functions on Promises.
 
-## Strings
+### Strings
 
 -   **`core/str` Module:** Use the `core/str` module to fetch and render language strings.
 -   **`getString`:** Use `getString` to fetch a single string (returns a native Promise).
@@ -257,7 +257,7 @@ These rules are derived from the Moodle JavaScript guidelines and are intended t
 -   **Caching:** Strings are cached in LocalStorage.
 -   **Native Promises:** Prefer `getString` and `getStrings` from Moodle 4.3 onwards.
 
-## Prefetching
+### Prefetching
 
 -   **`core/prefetch` Module:** Use the `core/prefetch` module to prefetch assets.
 -   **`prefetchString`:** Prefetch a single string.
@@ -265,18 +265,18 @@ These rules are derived from the Moodle JavaScript guidelines and are intended t
 -   **`prefetchTemplate`:** Prefetch a single template.
 -   **`prefetchTemplates`:** Prefetch multiple templates.
 
-## Dropzone
+### Dropzone
 
 -   **`core/dropzone` Module:** Use the `core/dropzone` module to create drop zones.
 -   **Accessibility:** The module ensures accessibility requirements are met.
 -   **Callbacks:** Drop zones trigger callbacks for common actions.
 
-## Reactive State
+### Reactive State
 
 -   **Framework Independence:** Core developments are framework independent.
 -   **Ad-hoc Library:** Moodle implements a basic reactive state pattern using an ad-hoc library.
 
-## Tools
+### Tools
 
 -   **NodeJS:** Most Moodle JavaScript tooling requires NodeJS.
 -   **Grunt:** Use Grunt to compile JavaScript and CSS, and to lint JavaScript, CSS, and Behat tests.
