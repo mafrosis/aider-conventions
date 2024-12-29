@@ -43,3 +43,89 @@ These conventions are used to guide the development of Moodle plugins.
 *   **Authentication Plugins:** Authentication plugins control how users log in.
 *   **Enrolment Plugins:** Enrolment plugins control which users are enrolled in which courses.
 *   **Repository Plugins:** Repository plugins provide ways for users to get content into Moodle.
+
+### Moodle Development Policies (from https://moodledev.io/general/development/policies)
+
+These rules are derived from the Moodle development policies and should be followed when developing Moodle plugins.
+
+#### General Architecture
+
+*   **Platform Compatibility:** Moodle aims to run on a wide range of platforms. Ensure your code is compatible and portable.
+*   **Modularity:** Moodle is modular. Extend functionality through plugins, not by modifying core files.
+*   **Plugin Types:** Understand and use the appropriate plugin types (activities, resources, blocks, themes, etc.) and their APIs.
+
+#### Coding Style
+
+*   **Consistent Style:** Follow Moodle's coding style to ensure code readability and maintainability.
+*   **Community Acceptance:** Adhering to the coding style is important for code to be accepted by the Moodle community.
+
+#### Security
+
+*   **Security Guidelines:** Strictly follow Moodle's security guidelines to protect user data and prevent vulnerabilities.
+*   **Responsible Internet Citizen:** Ensure your code does not introduce vulnerabilities that could compromise the server.
+
+#### Standards
+
+*   **HTML5 Compliance:** Produce strict, well-formed HTML5 code, preferably backwards compatible with XHTML 1.1.
+*   **Accessibility:** Comply with common accessibility guidelines (W3C WCAG 2.0, ARIA).
+*   **CSS for Layout:** Use CSS for layout and separate presentation from business logic.
+*   **Theme Extension:** If creating a custom theme, extend the Moodle 'Boost' theme.
+
+#### JavaScript
+
+*   **Vanilla JavaScript:** Write new JavaScript in Vanilla JavaScript using ES6 style.
+*   **Discourage Frameworks:** Avoid using jQuery, YUI, and other frameworks except for legacy interfaces.
+*   **Avoid Interface Manipulation:** Write code to avoid removing or adding interfaces as the page loads.
+*   **Accessibility:** Ensure all JavaScript is accessible.
+
+#### Internationalisation
+
+*   **Language Packs:** Keep language strings and locale information separate from the code, using language packs.
+*   **Default Language:** Use English (AU) as the default language for all code, comments, and documentation.
+
+#### Accessibility
+
+*   **Wide Range of Users:** Ensure Moodle works well for the widest possible range of people.
+
+#### Component Library
+
+*   **Component Reuse:** Utilize the component library to identify and reuse frequently-used user interface components.
+
+#### Performance
+
+*   **Scalability:** Ensure your code scales well with an increasing number of users, courses, and activities.
+*   **Discourage Performance Issues:** Avoid features that are discouraged on production sites for performance reasons.
+
+#### Database
+
+*   **XMLDB:** Use Moodle's database abstraction layer (XMLDB) for database interactions.
+*   **Database APIs:** Use the provided tools and APIs for defining, modifying, retrieving, and storing data.
+
+#### Events
+
+*   **Event Observers:** Use event observers to be notified when events happen and act on the data.
+*   **Observer Limitations:** Observers cannot modify event data or prevent actions from occurring.
+*   **Naming Convention:** Follow the events naming convention.
+
+#### Web Services
+
+*   **Web Service API:** Implement web services according to the Web Service API functions.
+*   **Naming Convention:** Follow the naming convention for web service functions.
+
+#### Testing
+
+*   **Manual Testing:** Write clear testing instructions for manual testing.
+*   **Unit Testing:** Create automated unit tests for each bit of functionality using PHPUnit.
+*   **Acceptance Testing:** Automate user interaction testing using the Behat framework.
+
+#### Third Party Libraries
+
+*   **Standard Inclusion:** Use the standard way to include third-party libraries in your code.
+
+#### Other Standards
+
+*   **Unique Style:** Moodle coding style is unique and not compatible with PEAR or other common PHP standards.
+
+#### Translations
+
+*   **Internationalization:** Pay attention to keeping the language strings and locale information separate from the code, in language packs.
